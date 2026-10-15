@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../license-guard.php';
+
 require_once __DIR__ . '/../config/database.php';
 
 function logActivity($conn, $user_id, $action, $description) {

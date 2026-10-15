@@ -54,16 +54,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Gerona Hospital IBMS</title>
+    <title>Sign In - Gerona Hospital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="/hmsystem/assets/css/style.css">
+    <link rel="stylesheet" href="/hmsystem/assets/css/style.css?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
 </head>
 <body>
     <div class="login-split-container">
         <!-- Left Hero Section -->
         <div class="login-hero-half">
+            <div class="login-hero-bg" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: url('/hmsystem/assets/images/hospital.jpg'); background-position: right 40%; background-size: cover; background-repeat: no-repeat; opacity: 0.78; filter: saturate(0.95) brightness(1.15) contrast(1.05); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.95) 70%, #000 100%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.95) 70%, #000 100%); z-index: 1; pointer-events: none;"></div>
             <div class="login-hero-overlay"></div>
             
             <div class="login-hero-header">
@@ -83,6 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     A unified hospital information & billing workspace for Gerona Hospital staff. Clear patient records, faster workflow, and data you can trust.
                 </p>
 
+                <div class="login-hero-divider"></div>
+
                 <div class="login-hero-features">
                     <div class="login-hero-feature">
                         <i class="fas fa-check"></i> Patient-first design
@@ -96,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <div style="font-size: 12px; color: var(--text-light); z-index: 2;">
+            <div style="font-size: 12px; color: var(--text-light); position: relative; z-index: 2;">
                 Gerona Hospital management &bull; 
             </div>
         </div>
@@ -162,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div style="color: var(--text-muted); line-height: 1.6;">
                         Admin: <strong style="color: var(--navy-dark);">admin@geronhospital.com</strong>  / <strong style="color: var(--navy-dark);">password</strong><br>
                         Doctor/Staff: <strong style="color: var(--navy-dark);">mgarcia@geronhospital.com</strong>  / <strong style="color: var(--navy-dark);">password</strong><br>
-                        Patient: <strong style="color: var(--navy-dark);">akatsukiharold25@gmail.com</strong> / <strong style="color: var(--navy-dark);">password</strong>
+                      
                     </div>
                 </div>
             </div>

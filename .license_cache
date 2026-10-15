@@ -1,0 +1,27 @@
+{
+    "cached_at": 1792074811,
+    "response": {
+        "success": true,
+        "valid": true,
+        "status": "active",
+        "message": "License is active and valid.",
+        "data": {
+            "client_fingerprint": "7187e98aabd0d2ca04e9f02082820671738d373d1484591734853570373a1125",
+            "client_name": "hmsystem",
+            "expires_at": "",
+            "license_id": "LIC-F3FB-8A76",
+            "nonce": "55562e15db9bcfb0dcd9c0ecd80a73be",
+            "server_time": "1792074810",
+            "status": "active",
+            "valid": "1",
+            "valid_until": "1792075110"
+        },
+        "signature": "KhTV0FnnyxgG37TDHJY0XdpMoCdPT7pkmR1qN9qDZTEYoxBgluEfRAFQ9TEYKtCMMXEvdeVP6E0R4m+xNUtyf/Wqb4EeXLJLQrLK/beN0SUYiun01Ob14nl8Wi7QxialBSLvqb/NREIs4iJgXWs9ANhjjnS/3pPyzlh4YLGfVG/CLrmTsfaimG1oZORu1jPLI7zIz4lB2mbBkK6maVX7Tv7u2KPR8Omc9ODAE2TOWuOH5Kad36XFgldziruDCZ0TiW3aMzkyq3D+/DHfP9BcOof0VmFvtrZEMmjMZGpfGSiNlL1GCiZ/N1VXNpX6M8pvYqIMqwfQkodhxMFAQDv9wQ==",
+        "signature_meta": {
+            "algorithm": "SHA256withRSA",
+            "canonical_format": "ksort_pipe_kv_v1",
+            "validity_seconds": 300,
+            "public_verification_key_hash": "aacfd6fa8e5328a240048c80de00d9cb4311ef295fcc53b7df91a179f3a19ef2"
+        }
+    }
+}
