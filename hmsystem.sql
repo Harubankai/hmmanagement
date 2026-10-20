@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2026 at 09:05 AM
+-- Generation Time: Oct 20, 2026 at 10:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -138,7 +138,17 @@ INSERT INTO `activity_logs` (`id`, `user_id`, `action`, `description`, `ip_addre
 (95, 1, 'User Logout', 'Administrator logged out of the system', '::1', '2026-10-20 06:16:09'),
 (96, 2, 'User Login', 'Dr. Maria Garcia logged into the system', '::1', '2026-10-20 06:16:42'),
 (97, 2, 'User Logout', 'Dr. Maria Garcia logged out of the system', '::1', '2026-10-20 06:17:41'),
-(98, 6, 'User Login', 'Toffee Dela Cruz logged into the system', '::1', '2026-10-20 06:18:14');
+(98, 6, 'User Login', 'Toffee Dela Cruz logged into the system', '::1', '2026-10-20 06:18:14'),
+(99, 8, 'Patient Sign Up', 'New patient signed up & verified email: Toffee Dela Cruz (PT-0015)', '::1', '2026-10-20 08:00:10'),
+(100, 8, 'Appointment Created', 'Created appointment APT-0017 for PT-0015 - Toffee Dela Cruz', '::1', '2026-10-20 08:01:02'),
+(101, 8, 'Appointment Created', 'Created appointment APT-0018 for PT-0015 - Toffee Dela Cruz', '::1', '2026-10-20 08:02:46'),
+(102, 8, 'User Logout', 'Toffee Dela Cruz logged out of the system', '::1', '2026-10-20 08:02:56'),
+(103, 2, 'User Login', 'Dr. Maria Garcia logged into the system', '::1', '2026-10-20 08:03:18'),
+(104, 2, 'Appointment Updated', 'Updated appointment ID: 17', '::1', '2026-10-20 08:04:39'),
+(105, 2, 'Bill Created', 'Created bill BILL-0012 for PT-0015 - Toffee Dela Cruz, total: 5,000.00', '::1', '2026-10-20 08:05:54'),
+(106, 2, 'Payment Recorded', 'Recorded payment PAY-0010 of ₱5,000.00 for bill BILL-0012', '::1', '2026-10-20 08:06:20'),
+(107, 2, 'User Logout', 'Dr. Maria Garcia logged out of the system', '::1', '2026-10-20 08:06:30'),
+(108, 8, 'User Login', 'Toffee Dela Cruz logged into the system', '::1', '2026-10-20 08:08:15');
 
 -- --------------------------------------------------------
 
@@ -182,7 +192,9 @@ INSERT INTO `appointments` (`id`, `appointment_id`, `patient_id`, `department_id
 (13, 'APT-0013', 13, 1, 'Dr. Maria Garcia', '2026-10-11', '09:00:00', 'Checkup', 'Pending', 'Test appointment', 6, '2026-10-10 11:52:42', '2026-10-10 11:52:42'),
 (14, 'APT-0014', 13, 1, 'Dr. Juan Santos', '2026-10-11', '10:00:00', 'Routine General Checkup', 'Pending', 'Booked by patient online portal', 6, '2026-10-10 11:55:50', '2026-10-10 11:55:50'),
 (15, 'APT-0015', 13, 3, '', '2026-10-10', '08:00:00', '', 'Pending', '', 6, '2026-10-10 11:57:36', '2026-10-10 11:57:36'),
-(16, 'APT-0016', 13, 7, 'Dr. Jose Reyes', '2026-10-10', '20:11:00', '', 'Completed', 'yawa', 6, '2026-10-10 12:07:29', '2026-10-10 12:17:58');
+(16, 'APT-0016', 13, 7, 'Dr. Jose Reyes', '2026-10-10', '20:11:00', '', 'Completed', 'yawa', 6, '2026-10-10 12:07:29', '2026-10-10 12:17:58'),
+(17, 'APT-0017', 15, 7, 'Dr. Ana Lim', '2026-10-20', '08:00:00', '', 'Completed', '', 8, '2026-10-20 08:01:02', '2026-10-20 08:04:39'),
+(18, 'APT-0018', 15, 7, 'Dr. Maria Garcia', '2026-10-20', '08:00:00', '', 'Pending', '', 8, '2026-10-20 08:02:46', '2026-10-20 08:02:46');
 
 -- --------------------------------------------------------
 
@@ -220,7 +232,8 @@ INSERT INTO `bills` (`id`, `bill_id`, `patient_id`, `bill_date`, `total_amount`,
 (8, 'BILL-0008', 8, '2026-04-18', 800.00, 800.00, 0.00, 'Paid', 'Vaccination and well-child check-up', 1, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (9, 'BILL-0009', 9, '2026-05-07', 2500.00, 1000.00, 1500.00, 'Partially Paid', 'Rheumatology consultation and medications', 3, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (10, 'BILL-0010', 10, '2026-05-22', 1300.00, 0.00, 1300.00, 'Unpaid', 'GI consultation and medications', 1, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
-(11, 'BILL-0011', 13, '2026-10-10', 500.00, 500.00, 0.00, 'Paid', 'dad', 2, '2026-10-10 12:19:39', '2026-10-10 12:22:57');
+(11, 'BILL-0011', 13, '2026-10-10', 500.00, 500.00, 0.00, 'Paid', 'dad', 2, '2026-10-10 12:19:39', '2026-10-10 12:22:57'),
+(12, 'BILL-0012', 15, '2026-10-20', 5000.00, 5000.00, 0.00, 'Paid', '', 2, '2026-10-20 08:05:54', '2026-10-20 08:06:20');
 
 -- --------------------------------------------------------
 
@@ -294,7 +307,8 @@ INSERT INTO `bill_items` (`id`, `bill_id`, `description`, `service_type`, `quant
 (48, 10, 'Stool Exam', 'Laboratory', 1, 150.00, 150.00, '2026-10-08 14:21:46'),
 (49, 10, 'Abdominal Ultrasound', 'Radiology', 1, 450.00, 450.00, '2026-10-08 14:21:46'),
 (50, 10, 'Hyoscine Butylbromide (30 tablets)', 'Medicine', 1, 200.00, 200.00, '2026-10-08 14:21:46'),
-(51, 11, 'htht', 'Consultation', 1, 500.00, 500.00, '2026-10-10 12:19:39');
+(51, 11, 'htht', 'Consultation', 1, 500.00, 500.00, '2026-10-10 12:19:39'),
+(52, 12, 'htht', 'Dental', 1, 5000.00, 5000.00, '2026-10-20 08:05:54');
 
 -- --------------------------------------------------------
 
@@ -341,6 +355,13 @@ CREATE TABLE `email_verifications` (
   `expires_at` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `email_verifications`
+--
+
+INSERT INTO `email_verifications` (`id`, `email`, `code`, `payload`, `expires_at`, `created_at`) VALUES
+(8, 'akatsukiharold12@gmail.com', '255541', '{\"first_name\":\"Toffee\",\"middle_name\":\"Santos\",\"last_name\":\"Dela Cruz\",\"date_of_birth\":\"2026-10-20\",\"gender\":\"Male\",\"contact_number\":\"23242424\",\"email\":\"akatsukiharold12@gmail.com\",\"address\":\"moncada tarlac\",\"emergency_contact_name\":\"qeqeqe\",\"emergency_contact_number\":\"0921212121\",\"blood_type\":\"A+\",\"password_hash\":\"$2y$10$KSuE3I6uj41Jy1.F4n0.3O6VeViSmPIO5b9prIdkBL7YsO63xVsYa\",\"full_name\":\"Toffee Dela Cruz\"}', '2026-10-20 16:11:37', '2026-10-20 07:56:37');
 
 -- --------------------------------------------------------
 
@@ -424,7 +445,8 @@ INSERT INTO `patients` (`id`, `patient_id`, `first_name`, `middle_name`, `last_n
 (11, 'PT-0011', 'Danny', 'Reyes', 'Pascual', '1982-02-14', 'Male', '09161111001', 'danny.p@email.com', '852 Sikatuna Street, Gerona, Tarlac', 'Nora Pascual', '09161111002', 'O+', 'Active', '2026-06-10', NULL, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (12, 'PT-0012', 'Nora', 'Cruz', 'Espiritu', '1998-10-05', 'Female', '09162222001', 'nora.e@email.com', '963 Tinio Avenue, Gerona, Tarlac', 'Mark Espiritu', '09162222002', 'B+', 'Active', '2026-07-01', NULL, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (13, 'PT-0013', 'Toffee', 'Santos', 'Dela Cruz', '2026-10-10', 'Other', '0912141211', 'akatsukiharold25@gmail.com', 'msaa', 'qeqeqe', '0921212121', 'O-', 'Active', '2026-10-10', NULL, '2026-10-10 11:20:26', '2026-10-10 11:20:26'),
-(14, 'PT-0014', 'Toffee', 'Santos', 'Dela Cruz', '2026-10-01', 'Female', '0912141211', 'genjutsukaido25@gmail.com', 'msaa', 'qeqeqe', '0921212121', 'B+', 'Active', '2026-10-15', NULL, '2026-10-15 14:33:16', '2026-10-15 14:33:16');
+(14, 'PT-0014', 'Toffee', 'Santos', 'Dela Cruz', '2026-10-01', 'Female', '0912141211', 'genjutsukaido25@gmail.com', 'msaa', 'qeqeqe', '0921212121', 'B+', 'Active', '2026-10-15', NULL, '2026-10-15 14:33:16', '2026-10-15 14:33:16'),
+(15, 'PT-0015', 'Toffee', 'Santos', 'Dela Cruz', '2026-10-22', 'Female', '0999000612', 'darwincatli971@gmail.com', 'moncada tarlac', 'qeqeqe', '0921212121', 'A+', 'Active', '2026-10-20', NULL, '2026-10-20 08:00:10', '2026-10-20 08:00:10');
 
 -- --------------------------------------------------------
 
@@ -459,7 +481,8 @@ INSERT INTO `payments` (`id`, `payment_id`, `bill_id`, `patient_id`, `payment_da
 (6, 'PAY-0006', 6, 6, '2026-06-28', 5000.00, 'GCash', 'GC-2026062801', 3, 'Final payment to complete the bill', '2026-10-08 14:21:46'),
 (7, 'PAY-0007', 8, 8, '2026-04-18', 800.00, 'Cash', NULL, 5, 'Full payment received', '2026-10-08 14:21:46'),
 (8, 'PAY-0008', 9, 9, '2026-05-07', 1000.00, 'Cash', NULL, 3, 'Partial payment received', '2026-10-08 14:21:46'),
-(9, 'PAY-0009', 11, 13, '2026-10-10', 500.00, 'GCash', '', 2, '0', '2026-10-10 12:22:56');
+(9, 'PAY-0009', 11, 13, '2026-10-10', 500.00, 'GCash', '', 2, '0', '2026-10-10 12:22:56'),
+(10, 'PAY-0010', 12, 15, '2026-10-20', 5000.00, 'GCash', '', 2, '0', '2026-10-20 08:06:20');
 
 -- --------------------------------------------------------
 
@@ -492,7 +515,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `email`, `patien
 (4, 'drreyes', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Dr. Jose Reyes', 'jreyes@geronhospital.com', NULL, 'staff', 'active', 1, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (5, 'staff_cruz', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Carlo Cruz', 'ccruz@geronhospital.com', NULL, 'staff', 'active', 1, '2026-10-08 14:21:46', '2026-10-08 14:21:46'),
 (6, 'akatsukiharold25@gmail.com', '$2y$10$Jzb8gKass7A4Oo1Nt7F09.FjBQj.BSFl6LWGk/dqsjlgk1QX2sOJW', 'Toffee Dela Cruz', 'akatsukiharold25@gmail.com', 13, 'patient', 'active', 1, '2026-10-10 11:20:26', '2026-10-10 11:32:22'),
-(7, 'genjutsukaido25@gmail.com', '$2y$10$EvxEYeR9bIy2.Ol56hmexetXAciVKYtRMTjMsp9UHfaWMgzPvdpSK', 'Toffee Dela Cruz', 'genjutsukaido25@gmail.com', 14, 'patient', 'active', 1, '2026-10-15 14:33:16', '2026-10-15 14:33:16');
+(7, 'genjutsukaido25@gmail.com', '$2y$10$EvxEYeR9bIy2.Ol56hmexetXAciVKYtRMTjMsp9UHfaWMgzPvdpSK', 'Toffee Dela Cruz', 'genjutsukaido25@gmail.com', 14, 'patient', 'active', 1, '2026-10-15 14:33:16', '2026-10-15 14:33:16'),
+(8, 'darwincatli971@gmail.com', '$2y$10$WmxLx1MTkO0I/6YmVGi.DOJiQWJc9j1rm0k0BAKI1hov7D/C4xx.W', 'Toffee Dela Cruz', 'darwincatli971@gmail.com', 15, 'patient', 'active', 1, '2026-10-20 08:00:10', '2026-10-20 08:00:10');
 
 --
 -- Indexes for dumped tables
@@ -587,25 +611,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity_logs`
 --
 ALTER TABLE `activity_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `bill_items`
 --
 ALTER TABLE `bill_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -617,7 +641,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `email_verifications`
 --
 ALTER TABLE `email_verifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `medical_records`
@@ -629,19 +653,19 @@ ALTER TABLE `medical_records`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
